@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+outputs/*
+!outputs/results.md
+!outputs/regen_results.md
+!outputs/examples/
+.ipynb_checkpoints/

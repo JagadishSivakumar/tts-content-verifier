@@ -1,0 +1,3 @@
+# Core library, labelling page and evaluation (CPU only)
+scikit-learn>=1.3
+numpy>=1.24

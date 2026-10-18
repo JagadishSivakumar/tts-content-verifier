@@ -1,0 +1,8 @@
+# TTS + ASR (GPU; tested target: Colab T4). torch is preinstalled on Colab.
+# After installing, record exact versions for reproducibility:  pip freeze > outputs/env.txt
+coqui-tts            # XTTS-v2  (maintained fork of Coqui TTS)
+f5-tts               # F5-TTS
+transformers>=4.40   # Whisper large-v3-turbo, wav2vec2 CTC
+librosa
+soundfile
+scikit-learn
