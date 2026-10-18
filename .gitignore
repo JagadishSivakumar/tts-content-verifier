@@ -5,3 +5,4 @@ outputs/*
 !outputs/regen_results.md
 !outputs/examples/
 .ipynb_checkpoints/
+.venv/
