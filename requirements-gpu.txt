@@ -1,8 +1,9 @@
-# TTS + ASR (GPU; tested target: Colab T4). torch is preinstalled on Colab.
-# After installing, record exact versions for reproducibility:  pip freeze > outputs/env.txt
-coqui-tts            # XTTS-v2  (maintained fork of Coqui TTS)
-f5-tts               # F5-TTS
-transformers>=4.40   # Whisper large-v3-turbo, wav2vec2 CTC
+# TTS + ASR (GPU; run on Colab T4, where torch is preinstalled).
+# Exact versions used for the reported results: outputs/env.txt
+coqui-tts                # XTTS-v2
+f5-tts                   # F5-TTS
+transformers>=4.47,<5    # Whisper large-v3-turbo, wav2vec2 CTC; range compatible with coqui-tts
 librosa
 soundfile
 scikit-learn
+google-genai             # Gemini judge

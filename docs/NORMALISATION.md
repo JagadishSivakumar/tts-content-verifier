@@ -18,7 +18,11 @@ as a TTS error. Each rule has a unit test in `tests/test_core.py`.
 | Mixed letter/digit codes spelled out | "QX7" = "Q X 7" → `q x seven` |
 | Abbreviations | "Dr" → `doctor`; "St" → `street`; "No. 5" → `number five` |
 | British/American spellings | "kilometers" → `kilometres` |
+| Currency words singular/plural | "euro" = "euros" |
+| Split or joined compounds (alignment) | "wrist watches" = "wristwatches", "some one" = "someone" |
+| Spelling variants and recogniser typos (alignment) | 1 letter allowed for 4–7 letter words, 2 for 8+, none under 4: "grey" = "gray", "chilli" = "chili"; "red" ≠ "bed" |
 
 **Known residual ambiguities** (left as false alarms and visible in error analysis rather than hidden
 by extra rules): "14:30" spoken as "two thirty", a year-like number that isn't a year, and codes
-read as words. Changing a rule means re-running `05_evaluate.py`; note the change here.
+read as words. The spelling tolerance can hide a real one-letter substitution in a 5+ letter word
+("bridge" vs "ridge"). Changing a rule means re-running `05_evaluate.py`; note the change here.

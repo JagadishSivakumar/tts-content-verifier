@@ -4,15 +4,13 @@
 Model choices
 - XTTS-v2 (Coqui): autoregressive GPT-style decoder over audio tokens. Autoregressive decoding is
   where skips, loops and early stops are expected to occur.
-- F5-TTS: non-autoregressive flow-matching model. Different failure profile expected; the
-  contrast between the two architectures is one of the findings.
+- F5-TTS: non-autoregressive flow-matching model, with a different expected failure profile.
 - Whisper large-v3-turbo: strong encoder-decoder ASR with an implicit language model.
 - wav2vec2-large-960h-lv60-self, greedy CTC decoding: almost no language model, so it is less
   able to "repair" what the TTS model actually said.
 
 Both TTS models clone the SAME reference voice so voice is held constant across conditions.
-API calls follow the libraries' documented interfaces; pin versions in requirements-gpu.txt and
-check the first generated clip by ear before running the full batch.
+Exact package versions used for the reported results are in outputs/env.txt.
 """
 from __future__ import annotations
 
@@ -120,11 +118,20 @@ def _ctc():
     return Wav2Vec2Processor.from_pretrained(mid), Wav2Vec2ForCTC.from_pretrained(mid).to(dev).eval(), dev
 
 
-def transcribe_ctc(path: str) -> str:
-    """Greedy CTC decode: no beam search, no external LM, by design."""
+def transcribe_ctc(path: str, lead_silence_s: float = 0.5) -> str:
+    """Greedy CTC decode: no beam search, no external LM, by design.
+
+    0.5 s of leading silence is added because wav2vec2 tends to garble or drop the first word of an
+    abrupt-start clip ("htrain left...", "hebridge in..."); that is a recogniser artifact, not
+    evidence of a TTS error. Set lead_silence_s=0 to reproduce the unpadded behaviour.
+    """
+    import numpy as np
     import torch
     proc, model, dev = _ctc()
-    inputs = proc(load_audio_16k(path), sampling_rate=SAMPLE_RATE_ASR, return_tensors="pt")
+    audio = load_audio_16k(path)
+    if lead_silence_s > 0:
+        audio = np.concatenate([np.zeros(int(lead_silence_s * SAMPLE_RATE_ASR), dtype=audio.dtype), audio])
+    inputs = proc(audio, sampling_rate=SAMPLE_RATE_ASR, return_tensors="pt")
     with torch.no_grad():
         logits = model(inputs.input_values.to(dev)).logits
     ids = torch.argmax(logits, dim=-1)

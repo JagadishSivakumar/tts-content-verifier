@@ -1,0 +1,318 @@
+{
+  "n_clips": 200,
+  "n_dev": 112,
+  "n_test": 88,
+  "error_rates": {
+    "f5_tts/all": {
+      "n": 100,
+      "rate": 0.17,
+      "ci": [
+        0.06666666666666667,
+        0.30612244897959184
+      ]
+    },
+    "f5_tts/long": {
+      "n": 20,
+      "rate": 0.05,
+      "ci": [
+        0.0,
+        0.15
+      ]
+    },
+    "f5_tts/numbers_names": {
+      "n": 32,
+      "rate": 0.5,
+      "ci": [
+        0.28125,
+        0.75
+      ]
+    },
+    "f5_tts/ordinary": {
+      "n": 28,
+      "rate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "f5_tts/repetition_prone": {
+      "n": 20,
+      "rate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "xtts_v2/all": {
+      "n": 100,
+      "rate": 0.23,
+      "ci": [
+        0.09278350515463918,
+        0.38
+      ]
+    },
+    "xtts_v2/long": {
+      "n": 20,
+      "rate": 0.3,
+      "ci": [
+        0.0,
+        0.6
+      ]
+    },
+    "xtts_v2/numbers_names": {
+      "n": 32,
+      "rate": 0.28125,
+      "ci": [
+        0.0625,
+        0.5625
+      ]
+    },
+    "xtts_v2/ordinary": {
+      "n": 28,
+      "rate": 0.2857142857142857,
+      "ci": [
+        0.03571428571428571,
+        0.5714285714285714
+      ]
+    },
+    "xtts_v2/repetition_prone": {
+      "n": 20,
+      "rate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "human_error_types": {
+    "omission": 11,
+    "truncation": 9,
+    "substitution": 18,
+    "insertion": 6,
+    "repetition": 1
+  },
+  "detection_test": {
+    "pred_whisper": {
+      "tp": 9,
+      "fp": 10,
+      "fn": 7,
+      "tn": 62,
+      "precision": 0.47368421052631576,
+      "recall": 0.5625,
+      "f1": 0.5142857142857142,
+      "false_alarm_rate": 0.1388888888888889,
+      "ci": {
+        "precision": [
+          0.47368421052631576,
+          0.21739130434782608,
+          1.0
+        ],
+        "recall": [
+          0.5625,
+          0.2631578947368421,
+          1.0
+        ],
+        "false_alarm_rate": [
+          0.1388888888888889,
+          0.0,
+          0.34782608695652173
+        ]
+      }
+    },
+    "pred_ctc": {
+      "tp": 10,
+      "fp": 13,
+      "fn": 6,
+      "tn": 59,
+      "precision": 0.43478260869565216,
+      "recall": 0.625,
+      "f1": 0.5128205128205128,
+      "false_alarm_rate": 0.18055555555555555,
+      "ci": {
+        "precision": [
+          0.43478260869565216,
+          0.15384615384615385,
+          0.75
+        ],
+        "recall": [
+          0.625,
+          0.2727272727272727,
+          1.0
+        ],
+        "false_alarm_rate": [
+          0.18055555555555555,
+          0.038461538461538464,
+          0.4
+        ]
+      }
+    },
+    "pred_combined": {
+      "tp": 9,
+      "fp": 11,
+      "fn": 7,
+      "tn": 61,
+      "precision": 0.45,
+      "recall": 0.5625,
+      "f1": 0.5,
+      "false_alarm_rate": 0.1527777777777778,
+      "ci": {
+        "precision": [
+          0.45,
+          0.125,
+          0.7272727272727273
+        ],
+        "recall": [
+          0.5625,
+          0.11764705882352941,
+          1.0
+        ],
+        "false_alarm_rate": [
+          0.1527777777777778,
+          0.030303030303030304,
+          0.3484848484848485
+        ]
+      }
+    }
+  },
+  "mcnemar_whisper_vs_combined": {
+    "a_only_correct": 4,
+    "b_only_correct": 3,
+    "p_value": 1.0
+  },
+  "combined_coefficients": {
+    "w_wer": 0.311,
+    "w_n_omission": 0.284,
+    "w_n_repetition": 0.0,
+    "w_n_substitution": -0.295,
+    "w_max_del_run": 0.233,
+    "c_wer": 0.519,
+    "c_n_omission": 1.012,
+    "c_n_repetition": 0.0,
+    "c_max_del_run": -0.666,
+    "abs_log_dur_ratio": 0.504,
+    "both_flag": 1.087,
+    "disagree": 0.562
+  },
+  "combined_threshold": 0.5146258357357636,
+  "recall_by_type": {
+    "insertion": {
+      "n": 6,
+      "whisper": 1.0,
+      "ctc": 1.0
+    },
+    "omission": {
+      "n": 11,
+      "whisper": 1.0,
+      "ctc": 1.0
+    },
+    "repetition": {
+      "n": 1,
+      "whisper": 1.0,
+      "ctc": 1.0
+    },
+    "substitution": {
+      "n": 18,
+      "whisper": 0.7777777777777778,
+      "ctc": 0.9444444444444444
+    },
+    "truncation": {
+      "n": 9,
+      "whisper": 0.2222222222222222,
+      "ctc": 0.3333333333333333
+    }
+  },
+  "hidden_by_whisper_caught_by_ctc": [
+    {
+      "clip_id": "xtts_v2__num_measure_3__s0",
+      "prompt": "Mix 30 ml of water with 15 g of flour and bake for 8 minutes.",
+      "whisper": "Mix 30 ml of water with 15 g of flour and bake for 8 minutes.",
+      "ctc": "mix thirty melo of water with fifteen g of flour and bake for eight minutes"
+    },
+    {
+      "clip_id": "f5_tts__num_stats_0__s0",
+      "prompt": "Sales rose by 12% to 48,300 units, the highest since 2011.",
+      "whisper": "Sales rose by 12% to 48,300 units, the highest since 2011.",
+      "ctc": "sales rose by twelve per cent to forty eight three hundred units the highest since twenty eleven"
+    },
+    {
+      "clip_id": "f5_tts__num_measure_2__s0",
+      "prompt": "Mix 600 ml of water with 1,000 g of flour and bake for 50 minutes.",
+      "whisper": "Mix 600 ml of water with 1000 g of flour and bake for 50 minutes.",
+      "ctc": "mix six hundred mell of water with one thousand g of flour and bake for fifty minutes"
+    },
+    {
+      "clip_id": "f5_tts__num_measure_3__s0",
+      "prompt": "Mix 30 ml of water with 15 g of flour and bake for 8 minutes.",
+      "whisper": "Mix 30 ml of water with 15 g of flour and bake for 8 minutes.",
+      "ctc": "mix thirty mell of water with fifteen g of flour and bake for eight minutes"
+    }
+  ],
+  "combined_false_alarms_test": [
+    {
+      "clip_id": "xtts_v2__ord_errand_2__s0",
+      "prompt": "Could you pick up a bag of oranges on your way home from the gym?",
+      "whisper": "Could you pick up a bag of oranges on your way home from the gym?",
+      "ctc": "could you pick up a bag of oranges on your way home from the jim"
+    },
+    {
+      "clip_id": "xtts_v2__num_names_0__s0",
+      "prompt": "Siobhan, Nguyen Thi Lan and Wojciech will present the results to the board.",
+      "whisper": "Shovan, Anguian, Thilan and Wojcik will present the results to the board.",
+      "ctc": "chavan anguen thelan and washich will present the results to the board"
+    },
+    {
+      "clip_id": "xtts_v2__num_names_1__s0",
+      "prompt": "Aoife, Tadhg and Oluwaseun will present the results to the board.",
+      "whisper": "Oif, Tadji, and Oluwassun will present the results to the board.",
+      "ctc": "oif taye and olwasoon will present the results to the board"
+    },
+    {
+      "clip_id": "xtts_v2__num_names_3__s0",
+      "prompt": "Krzysztof, Saoirse and Thandiwe will present the results to the board.",
+      "whisper": "Kristof, Saul Irsay, and Thandiwe will present the results to the board.",
+      "ctc": "kisto saarse and tandewa will present the results to the board"
+    },
+    {
+      "clip_id": "xtts_v2__num_codes_2__s0",
+      "prompt": "Your booking reference is ZT9 81P and your seat is 27F.",
+      "whisper": "Your booking reference is ZT981P, and your seat is 27th.",
+      "ctc": "your booking reference is zt nine eighty one p and your seat is twenty seven"
+    },
+    {
+      "clip_id": "xtts_v2__rep_twister_3__s0",
+      "prompt": "Red lorry, yellow lorry, red lorry, yellow lorry.",
+      "whisper": "Red lorry, yellow lorry, red lorry, yellow lorry.",
+      "ctc": "red laury yellow larry red larry yellow larry"
+    },
+    {
+      "clip_id": "f5_tts__num_stats_1__s0",
+      "prompt": "Sales rose by 3.5% to 907 units, the highest since 1998.",
+      "whisper": "Sales rose by 3.5% to 907 units, the highest since 1998.",
+      "ctc": "sales rose by three point five per cent to nine o seven units the highest since nineteen ninety eight"
+    },
+    {
+      "clip_id": "f5_tts__num_names_0__s0",
+      "prompt": "Siobhan, Nguyen Thi Lan and Wojciech will present the results to the board.",
+      "whisper": "Sayoban, Nengayan, Vilan, and Wodshik will present the results to the board.",
+      "ctc": "saoban nangan telan and wodshi will present the results to the board"
+    },
+    {
+      "clip_id": "f5_tts__num_names_1__s0",
+      "prompt": "Aoife, Tadhg and Oluwaseun will present the results to the board.",
+      "whisper": "OIF, TAG and Oluwazun will present the results to the board.",
+      "ctc": "of tog and aluazon will present the results to the board"
+    },
+    {
+      "clip_id": "f5_tts__num_names_2__s0",
+      "prompt": "Xiaoming, Bartholomew and Ngozi will present the results to the board.",
+      "whisper": "Chiaming, Bartholomew and Ngozi will present the results to the board.",
+      "ctc": "sheaming bartholomew and angoze will present the results to the board"
+    },
+    {
+      "clip_id": "f5_tts__num_codes_1__s0",
+      "prompt": "Your booking reference is BR2 0LM and your seat is 3A.",
+      "whisper": "Your booking reference is BR20LM and your seat is 3A.",
+      "ctc": "your booking reference is b r two zero l m and your seat is three a"
+    }
+  ]
+}

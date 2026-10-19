@@ -86,8 +86,49 @@ def _group_runs(edits: list[Edit], op: str) -> list[list[int]]:
     return runs
 
 
+def _char_distance(a: str, b: str) -> int:
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
+def spelling_equivalent(a: str, b: str) -> bool:
+    """Words that differ only by a spelling variant or recogniser typo are not content errors.
+
+    Allowed character edits: none under 4 letters (so "red" vs "bed" stays a substitution),
+    one for 4-7 letters (gray/grey, flavor/flavour, chili/chilli), two for 8+ letters (rare names).
+    Trade-off: a real one-letter substitution in a 5+ letter word ("bridge" vs "ridge") is missed.
+    """
+    n = max(len(a), len(b))
+    if n < 4:
+        return False
+    return _char_distance(a, b) <= (1 if n < 8 else 2)
+
+
+def _merge_compounds(ref: list[str], hyp: list[str]) -> tuple[list[str], list[str]]:
+    """Join adjacent tokens that one side writes as one word and the other as two
+    ("wrist watches" / "wristwatches", "some one" / "someone", "post code" / "postcode")."""
+    def merge(a: list[str], other: list[str]) -> list[str]:
+        vocab, out, i = set(other), [], 0
+        while i < len(a):
+            if i + 1 < len(a) and a[i] + a[i + 1] in vocab and (a[i] not in vocab or a[i + 1] not in vocab):
+                out.append(a[i] + a[i + 1]); i += 2
+            else:
+                out.append(a[i]); i += 1
+        return out
+    return merge(ref, hyp), merge(hyp, ref)
+
+
 def tag_errors(ref: list[str], hyp: list[str]) -> AlignmentResult:
+    ref, hyp = _merge_compounds(ref, hyp)
     edits = levenshtein_align(ref, hyp)
+    for e in edits:   # spelling-variant substitutions count as matches
+        if e.op == "sub" and spelling_equivalent(e.ref, e.hyp):
+            e.op = "match"
     res = AlignmentResult(edits=edits, n_ref=len(ref))
 
     # Truncation: a deletion run that reaches the end of the reference.

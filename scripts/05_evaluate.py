@@ -1,4 +1,7 @@
-"""Evaluate detectors against blind human labels and write outputs/results.{json,md}.
+"""Evaluate the detectors against a label file and write outputs/results{tag}.{json,md}.
+
+  python scripts/05_evaluate.py                                     # human labels (labels/primary.csv)
+  python scripts/05_evaluate.py --labels gemini.csv --tag _gemini   # automated judge labels
 
 Protocol
 - Combined detector is fitted and its threshold chosen on DEV only; all headline numbers are TEST.
@@ -6,6 +9,7 @@ Protocol
 - Baseline vs combined compared with an exact McNemar test on the same test clips.
 - The "Whisper hides errors" analysis is descriptive, reported on all labelled clips per error type.
 """
+import argparse
 import json
 import pickle
 import sys
@@ -19,13 +23,19 @@ from tts_verifier.io import LABELS, OUT, read_labels  # noqa: E402
 from tts_verifier.metrics import (cohens_kappa, detection_metrics, grouped_bootstrap_ci,  # noqa: E402
                                   mcnemar_exact)
 
-rows = load_rows()
+ap = argparse.ArgumentParser()
+ap.add_argument("--labels", default="primary.csv", help="label file in labels/ (default: human labels)")
+ap.add_argument("--tag", default="", help="suffix for output files, e.g. _gemini, so human results are not overwritten")
+args = ap.parse_args()
+SFX = args.tag
+WHO = "Gemini-judged" if SFX else "Human-verified"
+rows = load_rows(labels_file=args.labels)
 if not rows:
     sys.exit("No labelled rows. Generate, transcribe, label, then save labels/primary.csv.")
 dev = [r for r in rows if r["split"] == "dev"]
 test = [r for r in rows if r["split"] == "test"]
 results: dict = {"n_clips": len(rows), "n_dev": len(dev), "n_test": len(test)}
-md = [f"# Results\n\nLabelled clips: {len(rows)} (dev {len(dev)}, test {len(test)})\n"]
+md = [f"# Results{SFX}\n\n" + ("**Labels come from an automated judge, NOT humans.**\n\n" if SFX else "") + f"Labelled clips: {len(rows)} (dev {len(dev)}, test {len(test)})\n"]
 
 
 def rate(rs):
@@ -37,18 +47,18 @@ def fmt(p, lo, hi, pct=True):
     return f"{f(p)} [{f(lo)}, {f(hi)}]"
 
 
-# 1. Inter-annotator agreement --------------------------------------------------------------------
-primary, second = read_labels(LABELS / "primary.csv"), read_labels(LABELS / "second.csv")
+# 1. Agreement with an optional second pass (labels/second.csv) --------------------------------------------------------------------
+primary, second = (read_labels(LABELS / "primary.csv"), read_labels(LABELS / "second.csv")) if not SFX else ({}, {})
 both = sorted(set(primary) & set(second))
 if both:
     k = cohens_kappa([primary[c]["error"] for c in both], [second[c]["error"] for c in both])
     agree = sum(primary[c]["error"] == second[c]["error"] for c in both) / len(both)
     results["agreement"] = {"n": len(both), "kappa": k, "raw": agree}
-    md.append(f"## Label reliability\n\nSecond listener on {len(both)} clips: Cohen's κ = {k:.2f}, "
+    md.append(f"## Label reliability\n\nSecond pass on {len(both)} clips: Cohen's κ = {k:.2f}, "
               f"raw agreement {100 * agree:.0f}%.\n")
 
 # 2. Human-verified error rates by model x category -----------------------------------------------
-md.append("## Human-verified error rate (all labelled clips)\n\n| Model | Category | n | Error rate [95% CI] |\n|---|---|---|---|")
+md.append(f"## {WHO} error rate (all labelled clips)\n\n| Model | Category | n | Error rate [95% CI] |\n|---|---|---|---|")
 results["error_rates"] = {}
 for model in sorted({r["tts_model"] for r in rows}):
     for cat in ["all"] + sorted({r["category"] for r in rows}):
@@ -60,7 +70,7 @@ for model in sorted({r["tts_model"] for r in rows}):
         md.append(f"| {model} | {cat} | {len(rs)} | {fmt(p, lo, hi)} |")
 types = Counter(t for r in rows for t in r["human_types"])
 results["human_error_types"] = dict(types)
-md.append(f"\nHuman-labelled error types: {dict(types)}\n")
+md.append(f"\n{WHO} error types: {dict(types)}\n")
 
 # 3. Detection on TEST ----------------------------------------------------------------------------
 if sum(r["human_error"] for r in dev) == 0:
@@ -93,7 +103,7 @@ md.append(f"\nMcNemar (Whisper-only vs combined, test): p = {mc['p_value']:.3f} 
           f"({mc['a_only_correct']} clips only baseline right, {mc['b_only_correct']} only combined right).\n")
 
 # 4. Does Whisper hide TTS errors? ----------------------------------------------------------------
-md.append("## Does Whisper's language model hide TTS errors?\n\nRecall on human-labelled errors, by error type "
+md.append(f"## Does Whisper's language model hide TTS errors?\n\nRecall on {WHO.lower()} errors, by error type "
           "(all labelled clips; descriptive).\n\n| Error type | n | Whisper recall | CTC recall |\n|---|---|---|---|")
 results["recall_by_type"] = {}
 by_type = defaultdict(list)
@@ -109,7 +119,7 @@ hidden = [r for r in rows if r["human_error"] and not r["pred_whisper"] and r["p
 results["hidden_by_whisper_caught_by_ctc"] = [
     {"clip_id": r["clip_id"], "prompt": r["prompt"], "whisper": r["whisper_text"], "ctc": r["ctc_text"]}
     for r in hidden]
-md.append(f"\n{len(hidden)} human-verified errors were missed by Whisper but caught by CTC "
+md.append(f"\n{len(hidden)} {WHO.lower()} errors were missed by Whisper but caught by CTC "
           "(examples in results.json → hidden_by_whisper_caught_by_ctc).\n")
 
 # 5. Error analysis: false alarms of the combined detector on clean test clips ----------------
@@ -118,12 +128,12 @@ results["combined_false_alarms_test"] = [
     {"clip_id": r["clip_id"], "prompt": r["prompt"], "whisper": r["whisper_text"], "ctc": r["ctc_text"]}
     for r in fa]
 
-(OUT / "results.json").write_text(json.dumps(results, indent=2, default=float))
-(OUT / "results.md").write_text("\n".join(md) + "\n")
-with (OUT / "detector.pkl").open("wb") as f:
+(OUT / f"results{SFX}.json").write_text(json.dumps(results, indent=2, default=float))
+(OUT / f"results{SFX}.md").write_text("\n".join(md) + "\n")
+with (OUT / f"detector{SFX}.pkl").open("wb") as f:
     pickle.dump(det, f)
 # Per-clip predictions for inspection (no audio paths needed).
-(OUT / "predictions.jsonl").write_text("\n".join(json.dumps(
+(OUT / f"predictions{SFX}.jsonl").write_text("\n".join(json.dumps(
     {k: r[k] for k in ["clip_id", "split", "category", "tts_model", "human_error", "human_types",
                        "pred_whisper", "pred_ctc", "pred_combined", "score_combined"]}) for r in rows))
 print("\n".join(md))

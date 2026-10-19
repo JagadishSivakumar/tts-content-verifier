@@ -28,7 +28,8 @@ _UNIT_SYMBOLS = {"%": "percent", "km": "kilometres", "kg": "kilograms", "cm": "c
                  "g": "grams"}
 # British/American spelling variants collapsed to one form.
 _SPELLING = {"kilometers": "kilometres", "centimeters": "centimetres",
-             "millimeters": "millimetres", "milliliters": "millilitres", "okay": "ok"}
+             "millimeters": "millimetres", "milliliters": "millilitres", "okay": "ok",
+             "euros": "euro", "dollars": "dollar", "pounds": "pound"}
 
 
 def number_to_words(n: int) -> str:

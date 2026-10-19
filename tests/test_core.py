@@ -114,3 +114,31 @@ class TestPrompts(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCorrupt(unittest.TestCase):
+    def test_corruptions_change_text_and_keep_ends(self):
+        import random
+        from tts_verifier.corrupt import corrupt
+        text = "She opened the old wooden box slowly and found a folded letter inside."
+        vocab = ["market", "quiet", "bridge", "yellow"]
+        for kind in ("omission", "repetition", "substitution"):
+            out = corrupt(text, kind, random.Random(1), vocab)
+            self.assertIsNotNone(out)
+            self.assertNotEqual(normalize(out), normalize(text))
+            self.assertTrue(out.startswith("She") and out.endswith("inside."))
+        self.assertIsNone(corrupt("Too short.", "omission", random.Random(1)))
+
+
+class TestSpellingTolerance(unittest.TestCase):
+    def test_variants_are_not_errors(self):
+        for a, b in [("a grey line", "a gray line"), ("more flavour", "more flavor"),
+                     ("dried chilli", "dried chili"), ("someone switched", "some one switched"),
+                     ("Swiss wristwatches and", "swiss wrist watches and"), ("your postcode is", "your post code is")]:
+            r = tag_errors(normalize(a), normalize(b))
+            self.assertEqual(r.wer, 0, (a, b))
+
+    def test_real_errors_still_caught(self):
+        self.assertTrue(tag_errors(normalize("a red lorry stopped"), normalize("a bed lorry stopped")).count("substitution"))
+        self.assertTrue(tag_errors(normalize("the old wooden box"), normalize("the box")).count("omission"))
+        self.assertTrue(tag_errors(normalize("water and rope"), normalize("water water and rope")).count("repetition"))

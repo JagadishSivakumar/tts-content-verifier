@@ -1,8 +1,11 @@
 __pycache__/
 *.pyc
-outputs/*
-!outputs/results.md
-!outputs/regen_results.md
-!outputs/examples/
 .ipynb_checkpoints/
+outputs/*
+!outputs/synthetic_results.md
+!outputs/synthetic_predictions.json
+!outputs/results_gemini.md
+!outputs/results_gemini.json
+!outputs/gemini_agreement.md
+!outputs/env.txt
 .venv/

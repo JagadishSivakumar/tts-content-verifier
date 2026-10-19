@@ -1,0 +1,201 @@
+clip_key,error,types,notes
+024b2b95ad,1,omission,gemini: forecast for the coast says light rain until the end of the week.
+872a2d6df1,1,omission,gemini: forecast for the valley says clear skies until the end of the week
+7484d17e62,1,omission,gemini: forecast for the north says strong winds until the end of the week
+541a391c1f,0,,gemini: The forecast for the coast says light rain until the end of the week.
+5aafa3e056,0,,gemini: The forecast for the valley says clear skies until the end of the week.
+e5c4957b0b,0,,gemini: The forecast for the north says strong winds until the end of the week.
+15abbf2dea,1,omission,gemini: forecast for the city centre says heavy fog until the end of the week.
+0809b53a68,0,,gemini: Could you pick up some fresh bread on your way home from work?
+f183c17c43,0,,gemini: Could you pick up the parcel on your way home from the station?
+fd42b52e41,0,,gemini: Could you pick up a bag of oranges on your way home from the gym?
+30e89e4100,0,,gemini: Could you pick up my repaired watch on your way home from town?
+156310aed3,1,truncation,gemini: The design meeting has moved to Thursday because the room was double book
+c97a8c1fae,1,omission,gemini: Finance meeting has moved to Monday because the room was double booked.
+b8b00f343e,1,truncation,gemini: The support meeting has moved to Friday because the room was double book
+547256ae5d,0,,gemini: The planning meeting has moved to Wednesday because the room was double booked.
+d128e0476f,1,truncation,gemini: She opened the old wooden box slowly and found a folded letter hidden insi-
+f525ec18e9,0,,gemini: She opened the kitchen drawer slowly and found a silver key hidden inside.
+738d28bace,0,,gemini: She opened the dusty suitcase slowly and found a stack of photographs hidden inside.
+dc78dfe417,0,,gemini: She opened the garden shed slowly and found a sleeping cat hidden inside.
+75f0263abc,0,,"gemini: If the router stops responding, hold the power button for ten seconds."
+372121eb72,0,,"gemini: If the speaker stops responding, hold the power button for five seconds."
+20487ac410,0,,"gemini: If the tablet stops responding, hold the power button for fifteen seconds."
+e0383255b4,0,,"gemini: If the printer stops responding, hold the power button for twenty seconds."
+40daa1b688,0,,gemini: We missed the last bus and had to walk back along the river path.
+4ba6b04998,0,,gemini: We missed the last train and had to walk back along the old railway line.
+829e9dd968,0,,gemini: We missed the last ferry and had to walk back along the harbour wall.
+3e63e72640,0,,gemini: We missed the last tram and had to walk back along the main road.
+24be9d77aa,0,,"gemini: The soup needed more salt, so he added a pinch of pepper and let it simmer."
+e2b4db9408,0,,"gemini: The soup needed more flavour, so he added fresh thyme and let it simmer."
+ba3ae61db1,0,,"gemini: The soup needed more body, so he added two potatoes and let it simmer."
+283a4eafaa,0,,"gemini: The soup needed more heat, so he added a dried chilli and let it simmer."
+629597c483,0,,gemini: Your refund of twenty-five pounds sterling will arrive within three working days.
+bde60bb86b,0,,gemini: Your refund of 1250 pounds sterling will arrive within 5 working days.
+385418e478,0,,gemini: Your refund of $3.50 will arrive within 10 working days.
+c39172504a,0,,gemini: Your refund of 480 euro will arrive within 7 working days.
+7f14fc56c8,0,,gemini: The appointment with Dr Okonkwo is at nine five on the third of March.
+163b3de8b8,0,,gemini: The appointment with Dr Lindqvist is at 14:30 on the 21st of June.
+6ef7f064a8,0,,gemini: The appointment with Dr Ramaswamy is at 11:45 on the 12th of September.
+ad388693a5,0,,gemini: The appointment with Dr Fitzgerald is at 16:15 on the 2nd of December.
+999e6e1d8e,0,,gemini: The bridge in Aberystwyth was completed in 1864 and repaired in 1987.
+bb5b667eca,0,,gemini: The bridge in Llandudno was completed in 1905 and repaired in 2003.
+d208a61b8d,0,,gemini: The bridge in Penzance was completed in 1931 and repaired in 2016.
+c5011ffa27,0,,gemini: The bridge in Whitby was completed in 1879 and repaired in 1999.
+6aac40655d,0,,"gemini: Sales rose by 12% to 48,300 units, the highest since 2011."
+606715cb17,0,,"gemini: Sales rose by 3.5% to 907 units, the highest since 1998."
+b66ef1ce1f,0,,"gemini: Sales rose by 40% to 1 million units, the highest since 2008."
+bdede4d90f,0,,"gemini: Sales rose by 7% to 65,012 units, the highest since 2019."
+b7fa56053c,1,substitution,gemini: Please send it to 14 Mill Saint flat 3B postcode BS3 4QT
+ff50504f94,1,substitution;insertion,gemini: Please send it to 207 Queen Saint flat 12 postcode CF10 1AB dot dot dot
+04cd261fc0,1,substitution;insertion,"gemini: Please send it to 9 Harbour Saint, flat 41, postcode SW1A 2AA.odor"
+4cff810c90,1,insertion,gemini: Please send it to 88 Chapel Saint flat 7C postcode M1 5JQ dot
+f2c7f0e90f,0,,"gemini: Siobhan, Nguyen Thi Lan and Wojciech will present the results to the board."
+28bd8562dd,0,,"gemini: Aoife, Tadhg and Oluwaseun will present the results to the board."
+b1f8f499bd,0,,"gemini: Xiaoming, Bartholomew and Ngozi will present the results to the board."
+328950e2c2,0,,"gemini: Krzysztof, Saoirse and Thandiwe will present the results to the board."
+6d582e7b67,1,substitution,gemini: Your booking reference is QE7 49K and your seat is 14C
+2697b4dc06,1,omission;insertion,"gemini: Your booking reference is BR20, and your seat is 3A dot."
+fe0bce6357,0,,gemini: Your booking reference is ZT9 81P and your seat is 27F.
+d110231d94,1,substitution;repetition,gemini: Your booking reference is KLM 4 66D and your seat is 9BB.
+66be2aab1e,0,,gemini: Mix 250 ml of water with 400 g of flour and bake for 35 minutes.
+555438e98e,1,truncation,gemini: Mix 120 m of water with 75 g of flour and bake for 12 minutes.
+5dcbcbd4ca,0,,"gemini: Mix 600 ml of water with 1,000 g of flour and bake for 50 minutes."
+27bb298d7d,1,substitution,gemini: Mix 30 mil of water with 15 g of flour and bake for 8 minutes.
+b08f9c656c,0,,"gemini: Bring water, water, and more water, because we will need a lot of water."
+c6683505ba,0,,"gemini: Bring rope, rope, and more rope, because we will need a lot of rope."
+4b284d3e27,0,,"gemini: Bring tape, tape, and more tape, because we will need a lot of tape."
+a16843a0ea,0,,"gemini: Bring paper, paper, and more paper, because we will need a lot of paper."
+9c8fca51f6,0,,"gemini: Bring chalk, chalk, and more chalk, because we will need a lot of chalk."
+c3c255be68,0,,gemini: No no I said the red one not the blue one the red one
+1a4d25b256,0,,"gemini: No no, I said the left one, not the right one, the left one."
+75c61f7080,0,,"gemini: No, no, I said the small one, not the large one, the small one."
+3a16dde0c8,0,,"gemini: No, no, I said the first one, not the second one, the first one."
+0caaa1b2c3,0,,"gemini: No, no, I said the old one, not the new one, the old one."
+a02228aa42,0,,gemini: Six slim sleds slid slowly down the slippery slope.
+96eaa514b8,0,,"gemini: Fresh fried fish, fish fresh fried, fried fish fresh."
+79b9900a48,0,,gemini: A proper copper coffee pot sat upon a copper tray.
+cf75e24ea9,0,,"gemini: Red lorry, yellow lorry, red lorry, yellow lorry"
+83a86ea7a8,0,,"gemini: Which wristwatches are Swiss wristwatches, and which are not?"
+b7fe8fce49,0,,"gemini: One, two, three, four, five, six, seven, and that is where the counting stops."
+f55535807e,0,,"gemini: Ten, nine, eight, seven, six, five, four, and that is where the counting stops."
+09357fedcd,0,,"gemini: Two, four, six, eight, ten, twelve, and that is where the counting stops."
+6e98f38b07,0,,"gemini: Five, ten, fifteen, twenty, twenty five, and that is where the counting stops."
+a875a9856b,0,,"gemini: Three, three, three, and then four, and that is where the counting stops."
+459d0526fc,0,,"gemini: A man in a yellow coat argued with a trader about the price of mackerel. Further along the quay, children dangled crab lines over the edge of the wall. By nine o'clock the tide had turned and the water was creeping back up the slipway. The café on the corner propped its door open and the smell of coffee drifted outside. Two fishermen mended a torn net, passing a flask of tea between them."
+05bd99a5c8,0,,"gemini: Gulls circled above the market stalls, waiting for anyone careless with their bread. A man in a yellow coat argued with a trader about the price of mackerel. By nine o'clock, the tide had turned, and the water was creeping back up the slipway. The café on the corner propped its door open, and the smell of coffee drifted outside. Two fishermen mended a torn net, passing a flask of tea between them."
+91028a624c,0,,"gemini: The harbour woke slowly as the first boats returned with the morning catch. Gulls circled above the market stalls, waiting for anyone careless with their bread. Further along the quay, children dangled crab lines over the edge of the wall. By nine o'clock the tide had turned and the water was creeping back up the slipway. The café on the corner propped its door open and the smell of coffee drifted outside."
+5114821d69,0,,"gemini: The harbour woke slowly as the first boats returned with the morning catch. Gulls circled above the market stalls, waiting for anyone careless with their bread. A man in a yellow coat argued with a trader about the price of mackerel. Further along the quay, children dangled crab lines over the edge of the wall. The café on the corner propped its door open and the smell of coffee drifted outside."
+664ea09fa6,0,,"gemini: The harbour woke slowly as the first boats returned with the morning catch. Gulls circled above the market stalls, waiting for anyone careless with their bread. Further along the quay, children dangled crab lines over the edge of the wall. The café on the corner propped its door open and the smell of coffee drifted outside. Two fishermen mended a torn net, passing a flask of tea between them."
+071c1ed257,1,substitution,"gemini: Priya suspected the sensor, but the calibration logs look perfectly normal. On the fifth attempt they swapped the cable and recorded every reading by hand. It was only when the heating clicked on that someone noticed the pattern. The room temperature, not the equipment, had been changing the results all along. They moved the rig away from the radiator and the drift disappeared completely."
+ee50f7282e,1,truncation,"gemini: The experiment had failed four times, and nobody could agree on the reas. The numbers drifted upward after twenty minutes, exactly as they had before. It was only when the heating clicked on that someone noticed the pattern. The room temperature, not the equipment, had been changing the results all along. They moved the rig away from the radiator, and the drift disappeared completely."
+37a219bed7,1,truncation,gemini: The experiment had failed four times and nobody could agree on the reas Priya suspected the sensor but the calibration logs looked perfectly normal It was only when the heating clicked on that someone noticed the pattern The room temperature not the equipment had been changing the results all along They moved the rig away from the radiator and the drift disappeared completely
+273a3bc1d6,0,,"gemini: Priya suspected the sensor, but the calibration logs looked perfectly normal. On the fifth attempt they swapped the cable and recorded every reading by hand. The numbers drifted upward after twenty minutes, exactly as they had before. It was only when the heating clicked on that someone noticed the pattern. They moved the rig away from the radiator and the drift disappeared completely."
+e2af2b6988,1,truncation,"gemini: The experiment had failed four times, and nobody could agree on the reas. Priya suspected the sensor, but the calibration logs looked perfectly normal. On the fifth attempt, they swapped the cable and recorded every reading by hand. The numbers drifted upward after twenty minutes, exactly as they had before. The room temperature, not the equipment, had been changing the results all along."
+59fc7dbccd,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Outside the window, fields of wet grass gave way to a grey line of hills. A conductor walked the length of the carriage, checking tickets and apologising. Somewhere near the middle of the journey, the lights flickered and went out. Then a child laughed, someone switched on a torch, and the tension broke."
+9e516b1871,1,omission,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Conductor walked the length of the carriage, checking tickets and apologising. For a moment the only sound was the rattle of the wheels beneath the floor. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+5339f4c151,1,omission,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Conductor walked the length of the carriage, checking tickets and apologising. For a moment the only sound was the rattle of the wheels beneath the floor. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+23c7a8b059,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Outside the window, fields of wet grass gave way to a grey line of hills. Somewhere near the middle of the journey, the lights flickered and went out. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+7caeab240b,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Somewhere near the middle of the journey, the lights flickered and went out. For a moment the only sound was the rattle of the wheels beneath the floor. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+5755a1f792,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. By June, the slugs had eaten the lettuces, and the mint had swallowed the path. A fox had dug a neat tunnel under the shed, and seemed to be living there happily. She considered fighting back, then sat down with a cup of tea, and watched instead."
+97bd3d0922,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. By June, the slugs had eaten the lettuces, and the mint had swallowed the path. A fox had dug a neat tunnel under the shed, and seemed to be living there happily. In the end, she planted more mint, and left a bowl of water by the shed."
+7ffe9c0570,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. By June, the slugs had eaten the lettuces, and the mint had swallowed the path. The fox watched her too, curled in the shade, entirely unconcerned. In the end she planted more mint, and left a bowl of water by the shed."
+d394a4fa95,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. A fox had dug a neat tunnel under the shed and seemed to be living there happily. She considered fighting back, then sat down with a cup of tea and watched instead. In the end she planted more mint and left a bowl of water by the shed."
+34e95d2a87,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. She considered fighting back, then sat down with a cup of tea and watched instead. The fox watched her too, curled in the shade, entirely unconcerned. In the end she planted more mint and left a bowl of water by the shed."
+170dd66ddc,0,,gemini: The forecast for the city center says heavy fog until the end of the week.
+db173eb0c2,0,,gemini: Could you pick up some fresh bread on your way home from work?
+7f7d6b327d,0,,gemini: Could you pick up the parcel on your way home from the station?
+3274271174,0,,gemini: Could you pick up a bag of oranges on your way home from the gym?
+99e66891b1,0,,gemini: Could you pick up my repaired watch on your way home from town?
+382aa71f10,0,,gemini: The design meeting has moved to Thursday because the room was double booked.
+49ccc2c322,0,,gemini: The finance meeting has moved to Monday because the room was double booked.
+9125d0812b,0,,gemini: The support meeting has moved to Friday because the room was double booked.
+fec8bc9023,0,,gemini: The planning meeting has moved to Wednesday because the room was double booked.
+5d392d2d76,0,,gemini: She opened the old wooden box slowly and found a folded letter hidden inside.
+ce55c0a69b,0,,gemini: She opened the kitchen drawer slowly and found a silver key hidden inside.
+1f493adfff,0,,gemini: She opened the dusty suitcase slowly and found a stack of photographs hidden inside.
+891528f873,0,,gemini: She opened the garden shed slowly and found a sleeping cat hidden inside.
+b4c2ad4181,0,,"gemini: If the router stops responding, hold the power button for ten seconds."
+0ada778696,0,,"gemini: If the speaker stops responding, hold the power button for five seconds."
+7f13941f19,0,,"gemini: If the tablet stops responding, hold the power button for fifteen seconds."
+5dbb4f0d59,0,,"gemini: If the printer stops responding, hold the power button for twenty seconds."
+246a55bdd1,0,,gemini: We missed the last bus and had to walk back along the river path.
+d3c716a23d,0,,gemini: We missed the last train and had to walk back along the old railway line.
+e91b4c7e7b,0,,gemini: We missed the last ferry and had to walk back along the harbour wall.
+b6973a77b5,0,,gemini: We missed the last tram and had to walk back along the main road.
+97c5581c66,0,,gemini: The soup needed more salt so he added a pinch of pepper and let it simmer.
+bc4d7345cc,0,,"gemini: The soup needed more flavour, so he added fresh thyme and let it simmer."
+0e2feed068,0,,"gemini: The soup needed more body, so he added two potatoes and let it simmer."
+465ec4ab86,0,,"gemini: The soup needed more heat, so he added a dried chilli, and let it simmer."
+bd6271b636,1,omission;insertion,gemini: Your refund of uh 25 will arrive within 3 working days.
+eb111da1d4,1,omission,gemini: Your refund of 1 250 will arrive within 5 working days.
+6a7bd4f195,1,omission,gemini: Your refund of 3.50 will arrive within 10 working days.
+6551645003,1,substitution,gemini: Your refund of 2 480 will arrive within 7 working days.
+aa85404cec,0,,gemini: The appointment with Dr Okonkwo is at 9:05 on the 3rd of March.
+36b07fd247,0,,gemini: The appointment with Dr Lindqvist is at 14:30 on the 21st of June.
+0da2573d71,1,insertion,gemini: The appointment with Dr Ramaswamy is at 11 san 45 on the 12th of September.
+97460c1de5,0,,gemini: The appointment with Dr Fitzgerald is at 16:15 on the 2nd of December.
+7cd439accb,0,,gemini: The bridge in Aberystwyth was completed in 1864 and repaired in 1987.
+4ec740cdb6,0,,gemini: The bridge in Llandudno was completed in 1905 and repaired in 2003.
+0cc2e69ef3,0,,gemini: The bridge in Penzance was completed in 1931 and repaired in 2016.
+b04088eea8,0,,gemini: The bridge in Whitby was completed in 1879 and repaired in 1999.
+87fd2d03f6,1,truncation,"gemini: Sales rose by tw percent to 48 300 units, the highest since 2011."
+bfb0de169a,0,,"gemini: Sales rose by 3.5% to 907 units, the highest since 1998."
+425d4ce639,1,substitution,"gemini: Sales rose by 40% to 1,000 thousand units, the highest since 2008."
+458d615b0a,1,substitution,"gemini: Sales rose by 7% to 65 zed or 12 units, the highest since 2019."
+14e71f1eae,1,substitution,gemini: Please send it to 14 Mill sate flat 3B postcode BS3 4QT
+b9e1e3fbce,1,substitution,gemini: Please send it to 207 Queen sate flat 12 postcode CF10 1AB
+bc24cda1f5,1,substitution,gemini: Please send it to 9 Harbour say seen flat 41 postcode SWE 2AA
+9ed19da153,1,substitution,"gemini: Please send it to 88 Chapel sate, flat 7C, postcode M1 5JQ."
+c8715366c6,0,,"gemini: Siobhan, Nguyen Thi Lan and Wojciech will present the results to the board."
+3fe5f171e2,0,,"gemini: Aoife, Tadhg and Oluwaseun will present the results to the board."
+b653c20db0,0,,"gemini: Xiaoming, Bartholomew and Ngozi will present the results to the board."
+dbd2c42702,1,truncation,"gemini: Krzysztof, Saoirse and Thandi will present the results to the board."
+7254e73044,1,substitution,gemini: Your booking reference is QX7 49K and your seat is 40C.
+134f9cc23d,0,,gemini: Your booking reference is BR2 0LM and your seat is 3A.
+b1cb0ac831,0,,gemini: Your booking reference is ZT9 81P and your seat is 27F.
+4669bd4eec,0,,gemini: Your booking reference is KM4 66D and your seat is 9B.
+bfcca63d7c,0,,gemini: Mix 250 ml of water with 400 g of flour and bake for 35 minutes.
+b2832fba7a,0,,gemini: Mix 120 ml of water with 75 g of flour and bake for 12 minutes.
+963cd21d8a,1,substitution,"gemini: Mix 600 mel of water with 1,000 G of flour and bake for 50 minutes."
+c3f5305a9d,1,substitution,gemini: Mix 30 mel of water with 15 G of flour and bake for 8 minutes.
+c7730d4106,0,,"gemini: Bring water, water, and more water, because we will need a lot of water."
+7655630b67,0,,"gemini: Bring rope, rope, and more rope, because we will need a lot of rope."
+de5ddfdb33,0,,"gemini: Bring tape, tape, and more tape, because we will need a lot of tape."
+cb9f488b6c,0,,"gemini: Bring paper, paper, and more paper, because we will need a lot of paper."
+a80d5f9398,0,,"gemini: Bring chalk, chalk, and more chalk, because we will need a lot of chalk."
+8c2d276847,0,,"gemini: No, no, I said the red one, not the blue one, the red one."
+0b1327256f,0,,"gemini: No, no, I said the left one, not the right one, the left one."
+d12f7c87cf,0,,"gemini: No, no, I said the small one, not the large one, the small one."
+84db60f8dc,0,,"gemini: No, no, I said the first one, not the second one, the first one."
+6c897c6a0d,0,,"gemini: No, no, I said the old one, not the new one, the old one."
+35d5830553,0,,gemini: Six slim sleds slid slowly down the slippery slope.
+13409adbb5,0,,"gemini: Fresh fried fish, fish fresh fried, fried fish fresh."
+daff99f718,0,,gemini: A proper copper coffee pot sat upon a copper tray.
+c8ae0705e5,0,,"gemini: Red lorry, yellow lorry, red lorry, yellow lorry."
+8f1a4f0309,0,,"gemini: Which wristwatches are Swiss wristwatches, and which are not?"
+8992006093,0,,"gemini: One, two, three, four, five, six, seven, and that is where the counting stops."
+0278494fb6,0,,"gemini: Ten, nine, eight, seven, six, five, four, and that is where the counting stops."
+b5b6f8b15a,0,,"gemini: Two, four, six, eight, ten, twelve, and that is where the counting stops."
+17b65e9455,0,,"gemini: Five, ten, fifteen, twenty, twenty five, and that is where the counting stops."
+bc24641c2f,0,,"gemini: Three, three, three, and then four, and that is where the counting stops."
+57a3303fcb,0,,"gemini: A man in a yellow coat argued with a trader about the price of mackerel. Further along the quay, children dangled crab lines over the edge of the wall. By nine o'clock the tide had turned and the water was creeping back up the slipway. The café on the corner propped its door open and the smell of coffee drifted outside. Two fishermen mended a torn net, passing a flask of tea between them."
+f12dcf74bc,0,,"gemini: Gulls circled above the market stalls, waiting for anyone careless with their bread. A man in a yellow coat argued with a trader about the price of mackerel. By nine o'clock the tide had turned and the water was creeping back up the slipway. The café on the corner propped its door open and the smell of coffee drifted outside. Two fishermen mended a torn net, passing a flask of tea between them."
+7ae7ebd33e,0,,"gemini: The harbour woke slowly as the first boats returned with the morning catch. Gulls circled above the market stalls, waiting for anyone careless with their bread. Further along the quay, children dangled crab lines over the edge of the wall. By nine o'clock the tide had turned and the water was creeping back up the slipway. The café on the corner propped its door open and the smell of coffee drifted outside."
+da173694e6,0,,"gemini: The harbour woke slowly as the first boats returned with the morning catch. Gulls circled above the market stalls, waiting for anyone careless with their bread. A man in a yellow coat argued with a trader about the price of mackerel. Further along the quay, children dangled crab lines over the edge of the wall. The café on the corner propped its door open and the smell of coffee drifted outside."
+ee7aece75f,0,,"gemini: The harbour woke slowly as the first boats returned with the morning catch. Gulls circled above the market stalls, waiting for anyone careless with their bread. Further along the quay, children dangled crab lines over the edge of the wall. The café on the corner propped its door open and the smell of coffee drifted outside. Two fishermen mended a torn net, passing a flask of tea between them."
+72d1892c7d,0,,"gemini: Priya suspected the sensor, but the calibration logs looked perfectly normal. On the fifth attempt they swapped the cable and recorded every reading by hand. It was only when the heating clicked on that someone noticed the pattern. The room temperature, not the equipment, had been changing the results all along. They moved the rig away from the radiator and the drift disappeared completely."
+112d3fc724,0,,"gemini: The experiment had failed four times, and nobody could agree on the reason. The numbers drifted upward after twenty minutes, exactly as they had before. It was only when the heating clicked on that someone noticed the pattern. The room temperature, not the equipment, had been changing the results all along. They moved the rig away from the radiator and the drift disappeared completely."
+154d1571ba,0,,"gemini: The experiment had failed four times, and nobody could agree on the reason. Priya suspected the sensor, but the calibration logs looked perfectly normal. It was only when the heating clicked on that someone noticed the pattern. The room temperature, not the equipment, had been changing the results all along. They moved the rig away from the radiator and the drift disappeared completely."
+6afbf277b3,0,,"gemini: Priya suspected the sensor, but the calibration logs looked perfectly normal. On the fifth attempt they swapped the cable and recorded every reading by hand. The numbers drifted upward after twenty minutes, exactly as they had before. It was only when the heating clicked on that someone noticed the pattern. They moved the rig away from the radiator and the drift disappeared completely."
+864c393e5a,1,substitution,"gemini: Other experiment had failed four times, and nobody could agree on the reason. Priya suspected the sensor, but the calibration logs looked perfectly normal. On the fifth attempt they swapped the cable and recorded every reading by hand. The numbers drifted upward after twenty minutes, exactly as they had before. The room temperature, not the equipment, had been changing the results all along."
+9690fe5077,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Outside the window, fields of wet grass gave way to a grey line of hills. A conductor walked the length of the carriage, checking tickets and apologising. Somewhere near the middle of the journey, the lights flickered and went out. Then a child laughed, someone switched on a torch, and the tension broke."
+ae3eade7f5,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. A conductor walked the length of the carriage, checking tickets and apologising. For a moment the only sound was the rattle of the wheels beneath the floor. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+57d842e2b1,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. A conductor walked the length of the carriage, checking tickets and apologising. For a moment the only sound was the rattle of the wheels beneath the floor. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+36c95c5591,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Outside the window, fields of wet grass gave way to a grey line of hills. Somewhere near the middle of the journey, the lights flickered and went out. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+1e52cb8c84,0,,"gemini: The train left the station twelve minutes late, which surprised nobody on board. Somewhere near the middle of the journey, the lights flickered and went out. For a moment the only sound was the rattle of the wheels beneath the floor. Then a child laughed, someone switched on a torch, and the tension broke. When the power returned, the passengers were talking to each other like old friends."
+ea5df87058,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. By June the slugs had eaten the lettuces and the mint had swallowed the path. A fox had dug a neat tunnel under the shed and seemed to be living there happily. She considered fighting back, then sat down with a cup of tea and watched instead."
+5ef39848a3,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. By June the slugs had eaten the lettuces and the mint had swallowed the path. A fox had dug a neat tunnel under the shed and seemed to be living there happily. In the end she planted more mint and left a bowl of water by the shed."
+0feedf50ba,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. By June the slugs had eaten the lettuces and the mint had swallowed the path. The fox watched her too, curled in the shade, entirely unconcerned. In the end she planted more mint and left a bowl of water by the shed."
+87c717a62c,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. A fox had dug a neat tunnel under the shed and seemed to be living there happily. She considered fighting back, then sat down with a cup of tea and watched instead. In the end she planted more mint and left a bowl of water by the shed."
+02f39c1bcb,0,,"gemini: Every spring she promised herself that this would be the year the garden behaved. The roses were pruned, the beds were weeded, and the fence was painted green. She considered fighting back, then sat down with a cup of tea and watched instead. The fox watched her too, curled in the shade, entirely unconcerned. In the end she planted more mint and left a bowl of water by the shed."
