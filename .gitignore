@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+.venv/
 outputs/*
 !outputs/synthetic_results.md
 !outputs/synthetic_predictions.json
@@ -8,4 +9,3 @@ outputs/*
 !outputs/results_gemini.json
 !outputs/gemini_agreement.md
 !outputs/env.txt
-.venv/

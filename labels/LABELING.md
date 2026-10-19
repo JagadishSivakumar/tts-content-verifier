@@ -1,17 +1,20 @@
 # Listening protocol
 
-Human labels are the reference against which the automated judge is validated, so they were
-collected under fixed rules.
+Human labels are the reference against which the automated judge is checked, so they were collected
+under fixed rules.
 
 ## Sample
 40 natural clips: 5 per (prompt category × TTS model), drawn with a fixed seed
 (`tts_verifier.listen.validation_sample`). The sample was fixed before any labelling and does not
 depend on detector or judge output.
 
-## Blinding
+## What the labeller saw
 The labelling view (`tts_verifier.listen.show`) shows only the prompt text and the audio, in a fixed
-shuffled order. It does not show the TTS model name, seed, ASR transcripts, detector output or judge
-output.
+shuffled order, without the TTS model name, seed, detector output or judge output.
+
+The labels are **not blind to ASR transcripts**: an AI-assisted comparison of the clips' transcripts
+with the prompts was reviewed before the final labels were confirmed by listening. Errors visible in
+ASR output were therefore easier to find, which favours the ASR detectors on this sample.
 
 ## Decision rule (one label per clip)
 
